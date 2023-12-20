@@ -26,12 +26,8 @@ public class Assignment1_65050101_65050301 extends JPanel{
         g2.fillRect(0, 0, 600, 600);
 
         g2.setColor(Color.BLACK);
-        plot(g2, 100, 100);
-        plot(g2, 500, 500);
-        plot(g2, 100, 500);
-        plot(g2, 500, 100);
-        bezierCurve(g2, 100, 100, 500, 500, 100, 500, 500, 100);
-        BresenhamLine(g2, 100, 100, 500, 100);
+        // bezierCurve(g2, 100, 100, 500, 500, 100, 500, 500, 100);
+        // BresenhamLine(g2, 100, 100, 500, 100);
 
         int[] xpoly = {100, 250, 550, 400, 250, 90 ,40};
         int[] ypoly = {100, 50, 150, 300, 500, 400, 200};
@@ -43,8 +39,8 @@ public class Assignment1_65050101_65050301 extends JPanel{
     }
 
     void bezierCurve(Graphics g, int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4){
-        for (int i = 0; i < 1000; i++) {
-            float t = i / 1000.0f;
+        for (int i = 0; i < 10000; i++) {
+            float t = i / 10000.0f;
             // System.out.println( (Math.pow(1 - t, 3) * x1 + 3 * t * Math.pow(1 - t, 2) * x2 + 3 * t * t * (1 - t) * x3 + Math.pow(t, 4) * x4));
             plot(
             g, 
