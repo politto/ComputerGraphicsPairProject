@@ -14,4 +14,11 @@ public class NodeCoordinate {
     public int getY() {
         return y;
     }
+
+    public boolean equals(NodeCoordinate other) {
+        return other.getX() == this.getX() && other.getY() == this.getY();
+    }
+    public String toString() {
+        return "NodeCoordinate x: " + x + ", y: " + y;
+    }
 }
