@@ -2,6 +2,7 @@ import javax.swing.*;
 import org.w3c.dom.Node;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.LinkedList;
@@ -28,7 +29,7 @@ public class Assignment1_65050101_65050301 extends JPanel{
         g2.setColor(new Color(200, 152, 87));
         g2.fillRect(0, 0, 600, 600);
 
-        g2.setColor(Color.BLACK);
+        g2.setColor(new Color(205, 160, 95));
         // bezierCurve(g2, 100, 100, 500, 500, 100, 500, 500, 100);
         // BresenhamLine(g2, 100, 100, 500, 100);
 
@@ -38,8 +39,7 @@ public class Assignment1_65050101_65050301 extends JPanel{
         // g2.drawPolygon(poly);
         // buffer = floodFill(buffer, 480, 110, new Color(200, 152, 87), Color.BLUE);
         drawHead(g2);
-        paintHead(buffer);        
-
+        paintHead(buffer);
         paintSep(g2);
 
 
@@ -48,10 +48,10 @@ public class Assignment1_65050101_65050301 extends JPanel{
     }
 
     void drawHead(Graphics g) {
-        drawCircle(g, 102, 220, 8);
-        drawCircle(g, 102, 220, 4);
-        drawCircle(g, 132, 220, 8);
-        drawCircle(g, 132, 220, 4);
+        drawCircle(g, 117, 225, 12);
+        drawCircle(g, 117, 225, 10);
+        drawCircle(g, 175, 227, 12);
+        drawCircle(g, 175, 227, 10);
         NodeCoordinate[] outer = {
             new NodeCoordinate(82, 268),
             new NodeCoordinate(89, 287),
@@ -70,7 +70,6 @@ public class Assignment1_65050101_65050301 extends JPanel{
             new NodeCoordinate(203, 168),
             new NodeCoordinate(181, 186),
             new NodeCoordinate(181, 171),
-            new NodeCoordinate(181, 171),
             new NodeCoordinate(187, 161),
             new NodeCoordinate(195, 150),
             new NodeCoordinate(193, 129),
@@ -81,17 +80,52 @@ public class Assignment1_65050101_65050301 extends JPanel{
             new NodeCoordinate(172, 154),
             new NodeCoordinate(171, 168),
             new NodeCoordinate(162, 186),
-            new NodeCoordinate(126, 184)
-
-
-
+            new NodeCoordinate(126, 184),
+            new NodeCoordinate(119, 167),
+            new NodeCoordinate(121, 148),
+            new NodeCoordinate(119, 143),
+            new NodeCoordinate(111, 152),
+            new NodeCoordinate(108, 144),
+            new NodeCoordinate(109, 119),
+            new NodeCoordinate(102, 127),
+            new NodeCoordinate(101, 147),
+            new NodeCoordinate(106, 159),
+            new NodeCoordinate(100, 152),
+            new NodeCoordinate(90, 148),
+            new NodeCoordinate(86, 162),
+            new NodeCoordinate(87, 192),
+            new NodeCoordinate(79, 224),
         };
-        NodeCoordinate[] inner = {
-            
-            new NodeCoordinate(173, 200),
-            new NodeCoordinate(157, 195),
+        myPolygonDraw(g, outer);
 
-        };
+        //Right horn        
+        g.setColor(new Color(205, 160, 95));
+        ArrayList<NodeCoordinate> inner = new ArrayList<>();
+
+        inner.add(new NodeCoordinate(177, 160));
+        inner.add(new NodeCoordinate(181, 171));
+        inner.add(new NodeCoordinate(162, 186));
+        inner.add(new NodeCoordinate(157, 195));
+        inner.add(new NodeCoordinate(173, 200));
+        inner.add(new NodeCoordinate(181, 186));
+        inner.add(new NodeCoordinate(181, 211));
+        inner.add(new NodeCoordinate(160, 211));
+        inner.add(new NodeCoordinate(151, 223));
+        inner.add(new NodeCoordinate(138, 222));
+        inner.add(new NodeCoordinate(130, 190));
+        inner.add(new NodeCoordinate(126, 184));
+        inner.add(new NodeCoordinate(106, 159));
+        inner.add(new NodeCoordinate(113, 200));
+        inner.add(new NodeCoordinate(130, 190));
+        
+        continuousDraw(g, inner);
+        inner.clear();
+
+        //Left horn
+
+
+
+        
         // autoDrawByPart(g, outer, inner);
         // autoDraw2(g, outer);
 
@@ -99,8 +133,14 @@ public class Assignment1_65050101_65050301 extends JPanel{
 
     void paintHead(BufferedImage bf){
         long start = new Date().getTime();
-        floodFill(bf, 102, 220, new Color(200, 152, 87), Color.BLACK);
+        floodFill(bf, 117, 220, new Color(200, 152, 87), Color.BLACK);
+        floodFill(bf, 175, 227, new Color(200, 152, 87), Color.BLACK);
         floodFill(bf, 102, 226, new Color(200, 152, 87), Color.WHITE);
+        floodFill(bf, 147, 203, new Color(200, 152, 87), Color.WHITE);
+        floodFill(bf, 172, 184, new Color(200, 152, 87), new Color(235, 218, 70));
+        floodFill(bf, 178, 168, new Color(200, 152, 87), new Color(242, 115, 64));
+        floodFill(bf, 121, 189, new Color(200, 152, 87), new Color(235, 218, 70));        
+        floodFill(bf, 105, 143, new Color(200, 152, 87), new Color(242, 115, 64));
         System.out.println(new Date().getTime() - start);
 
     }
@@ -216,9 +256,6 @@ public class Assignment1_65050101_65050301 extends JPanel{
                 
             }
 
-
-            // System.out.println(q.size());
-
         }
 
         return m;
@@ -262,196 +299,34 @@ public class Assignment1_65050101_65050301 extends JPanel{
         }
 
     }
-// 
-//     void autoDraw2(Graphics g, NodeCoordinate[] nodes){
-//         GraphicLine[] lines = new GraphicLine[nodes.length * nodes.length];
-//         NodeCoordinate prev = null;
-//         int linesIdx = 0;
-//         int sameDrawNodeCnt = 0;
-// 
-//         
-// 
-//         m_sort(nodes);
-//         for (int i = 0; i < nodes.length; i++) {
-//             for (int j = 0; j < nodes.length; j++) {
-//                 if (nodes[i].equals(nodes[j])) continue;
-// 
-//                 if (!checkArrContains(lines, new GraphicLine(nodes[i], nodes[j]))) lines[linesIdx++] = new GraphicLine(nodes[i], nodes[j]);
-//                 System.out.println(lines[linesIdx - 1]);
-//             }
-//         }
-// 
-//         for (int i = 0; i < lines.length; i++) {
-//             if (lines[i] == null) return;
-//             NodeCoordinate from = lines[i].getEnd1();
-//             NodeCoordinate to = lines[i].getEnd2();
-// 
-//             if (sameDrawNodeCnt >= 4) continue;
-//             if (!from.equals(prev) && !to.equals(prev) && prev != null) sameDrawNodeCnt = 0;
-//             else if (!lines[i].isDrawn && sameDrawNodeCnt < 4) {
-//                 sameDrawNodeCnt++;
-// 
-//                 bresenhamLine(g, from.getX(), from.getY(), to.getX(), to.getY());
-//                 lines[i].isDrawn = true;
-//                 prev = from;
-// 
-//             } 
-//         }
-// 
-// 
-//     }
-// 
-//     void autoDrawByPart(Graphics g, NodeCoordinate[] borderNodes, NodeCoordinate[] innerNodes){
-//         NodeCoordinate[][] map = new NodeCoordinate[600][600];
-// 
-//         for (int i = 0; i < borderNodes.length; i++) {
-//             map[borderNodes[i].getY()][borderNodes[i].getX()] = borderNodes[i];
-//         }
-// 
-//         for (int i = 1; i < borderNodes.length; i++) {
-//             // findTwoNearestNodeAndDrawLine(g, map,map[borderNodes[i].getY()][borderNodes[i].getX()]);
-//             bresenhamLine(g, borderNodes[i - 1].getX(), borderNodes[i - 1].getY(), borderNodes[i].getX(), borderNodes[i].getY());
-//         }
-//         bresenhamLine(g, borderNodes[borderNodes.length - 1].getX(), borderNodes[borderNodes.length - 1].getY(), borderNodes[0].getX(), borderNodes[0].getY());
-// 
-//         for (int i = 0; i < innerNodes.length; i++) {
-//             map[innerNodes[i].getY()][innerNodes[i].getX()] = innerNodes[i];
-//         }
-// 
-//         for (int i = 0; i < innerNodes.length; i++) {
-//             findTwoNearestNodeAndDrawLine(g, map,map[innerNodes[i].getY()][innerNodes[i].getX()]);
-//         }
-// 
-// 
-//     }
-// 
-//     void findTwoNearestNodeAndDrawLine(Graphics g, NodeCoordinate[][] map, NodeCoordinate from) {
-//         NodeCoordinate[] nearest = new NodeCoordinate[2];
-//         int nullNearestLeft = 2;
-//         int radius = 1;
-//         System.out.println("Function find n draw Started!");
-//         while (nearest[0] == null && radius <= 600) {
-//             System.out.println(nearest[0] + " <1 Nearest 2> " + nearest[1]);
-//             for (int i = radius; i > 0; i--) {
-//                 for (int j = -i; j <= i; j++) {
-// 
-//                     if (i == radius && j == 0 && i < 0) continue;
-// 
-//                     if (
-//                         from.getY() + i >= 0 && from.getY() + i < map.length 
-//                         && from.getX() + j >= 0 && from.getX() + j < map[0].length
-//                         && map[from.getY() + i][from.getX() + j] != null
-//                         && !checkArrContains(nearest, map[from.getY() + i][from.getX() + j])
-//                     ){
-// 
-//                         NodeCoordinate to = map[from.getY() + i][from.getX() + j];
-//                         nearest[nullNearestLeft - 1] = to;
-//                         bresenhamLine(g, from.getX(), from.getY(), to.getX(), to.getY());
-//                         nullNearestLeft--;
-//                     }
-// 
-//                     if (
-//                         from.getY() + i >= 0 && from.getY() + i < map.length 
-//                         && from.getX() - j >= 0 && from.getX() - j < map[0].length
-//                         && map[from.getY() + i][from.getX() - j] != null
-//                         && !checkArrContains(nearest, map[from.getY() + i][from.getX() - j])
-//                     ){
-// 
-//                         NodeCoordinate to = map[from.getY() + i][from.getX() - j];
-//                         nearest[nullNearestLeft - 1] = to;
-//                         bresenhamLine(g, from.getX(), from.getY(), to.getX(), to.getY());
-//                         nullNearestLeft--;
-//                     }
-// 
-//                     if (
-//                         from.getY() - i >= 0 && from.getY() - i < map.length 
-//                         && from.getX() + j >= 0 && from.getX() + j < map[0].length
-//                         && map[from.getY() - i][from.getX() + j] != null
-//                         && !checkArrContains(nearest, map[from.getY() - i][from.getX() + j])
-//                     ){
-// 
-//                         NodeCoordinate to = map[from.getY() - i][from.getX() + j];
-//                         nearest[nullNearestLeft - 1] = to;
-//                         bresenhamLine(g, from.getX(), from.getY(), to.getX(), to.getY());
-//                         nullNearestLeft--;
-//                     }
-// 
-//                     if (
-//                         from.getY() - i >= 0 && from.getY() - i < map.length 
-//                         && from.getX() - j >= 0 && from.getX() - j < map[0].length
-//                         && map[from.getY() - i][from.getX() - j] != null
-//                         && !checkArrContains(nearest, map[from.getY() - i][from.getX() - j])
-//                     ){
-// 
-//                         NodeCoordinate to = map[from.getY() - i][from.getX() - j];
-//                         nearest[nullNearestLeft - 1] = to;
-//                         bresenhamLine(g, from.getX(), from.getY(), to.getX(), to.getY());
-//                         nullNearestLeft--;
-//                     }
-// 
-//                     
-//                     
-//                     // System.out.println(nullNearestLeft + " << null left, radius : " + radius + ", i : " + i + ", j : " + j);
-//                     if (nullNearestLeft < 1) {
-//                         
-//                         System.out.println(nearest[0] + " <1 Nearest 2> " + nearest[1]);
-//                         return;
-//                     }
-// 
-//                 
-//                 }
-//             }
-//             radius++;
-//         }
-//     }
-// 
-//     static void m_sort(NodeCoordinate[] data){
-//         if (data.length < 2) return;
-// 
-//         NodeCoordinate[] left = new NodeCoordinate[data.length/2];
-//         NodeCoordinate[] right = new NodeCoordinate[data.length - left.length];    
-//         for (int i = 0; i < data.length; i++) {
-//             if (i < data.length / 2) left[i] = data[i];      
-//             else right[i - left.length] = data[i];
-//         }
-// 
-//         m_sort(left);
-//         m_sort(right);
-//         merge(data, left, right);
-// 
-//     }
-// 
-//     static void merge(NodeCoordinate[] input, NodeCoordinate[] left, NodeCoordinate[] right) {
-//         int lenl = left.length;
-//         int lenr = right.length;
-// 
-//         int leftidx = 0, rightidx = 0, inpidx = 0;
-//         while ((leftidx < lenl) && (rightidx < lenr)) {      
-//             if (left[leftidx].getX() < right[rightidx].getX()) input[inpidx++] = left[leftidx++];
-//             else if (left[leftidx].getX() == right[rightidx].getX() && left[leftidx].getY() < right[rightidx].getY()) {
-//                  input[inpidx++] = left[leftidx++];
-//             }
-//             else input[inpidx++] = right[rightidx++];        
-//         }
-//         if (rightidx == lenr) {
-//             while (leftidx < lenl) input[inpidx++] = left[leftidx++];
-//         }
-//         else {
-//             while (rightidx < lenr) input[inpidx++] = right[rightidx++];
-//         }
-// 
-//     }
 
+    void myPolygonDraw(Graphics g, NodeCoordinate[] input){
 
-//     <T> boolean checkArrContains(T[] arr, T target){
-//         if (arr.length == 0) return false;
-//         for (T t : arr) {
-//             if (t == null) continue;
-//             if (t.equals(target)) return true; 
-//         }
-// 
-//         return false;
-//     }
+        for (int i = 1; i < input.length; i++) {
+            bresenhamLine(g, input[i - 1].getX(), input[i - 1].getY(), input[i].getX(), input[i].getY());
+        }
+        bresenhamLine(g, input[input.length - 1].getX(), input[input.length - 1].getY(), input[0].getX(), input[0].getY());
+    }
+
+    void continuousDraw(Graphics g, NodeCoordinate[] input) {
+                for (int i = 1; i < input.length; i++) {
+            bresenhamLine(g, input[i - 1].getX(), input[i - 1].getY(), input[i].getX(), input[i].getY());
+        }
+    }
+
+    void myPolygonDraw(Graphics g, ArrayList<NodeCoordinate> input){
+
+        for (int i = 1; i < input.size(); i++) {
+            bresenhamLine(g, input.get(i - 1).getX(), input.get(i - 1).getY(), input.get(i).getX(), input.get(i).getY());
+        }
+        bresenhamLine(g, input.get(input.size() - 1).getX(), input.get(input.size() - 1).getY(), input.get(0).getX(), input.get(0).getY());
+    }
+
+    void continuousDraw(Graphics g, ArrayList<NodeCoordinate> input) {
+                for (int i = 1; i < input.size(); i++) {
+            bresenhamLine(g, input.get(i - 1).getX(), input.get(i - 1).getY(), input.get(i).getX(), input.get(i).getY());
+        }
+    }
 
     void plot(Graphics g, int x, int y) {
         g.fillRect(x, y, 1, 1);

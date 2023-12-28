@@ -1,7 +1,6 @@
 public class NodeCoordinate {
     private int x;
     private int y;
-    private int linesInto = 0;
 
     NodeCoordinate(int x, int y) {
         this.x = x;
@@ -14,14 +13,6 @@ public class NodeCoordinate {
 
     public int getY() {
         return y;
-    }
-
-    public int getLinesInto() {
-        return linesInto;
-    }
-
-    public void setLinesInto(int linesInto) {
-        this.linesInto = linesInto;
     }
 
     public boolean equals(NodeCoordinate other) {
