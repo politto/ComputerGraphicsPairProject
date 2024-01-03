@@ -388,10 +388,10 @@ public class Assignment1_65050101_65050301 extends JPanel{
     }
 
     void drawHead(Graphics g) {
-        drawCircle(g, 115, 222, 14);
-        drawCircle(g, 115, 222, 10);
-        drawCircle(g, 172, 224, 14);
-        drawCircle(g, 172, 224, 10);
+        drawCircle(g, 115, 187, 14);
+        drawCircle(g, 115, 187, 10);
+        drawCircle(g, 172, 189, 14);
+        drawCircle(g, 172, 189, 10);
         ArrayList<NodeCoordinate> outer = new ArrayList<>();
 
         outer.add(new NodeCoordinate(82, 268));
@@ -674,20 +674,40 @@ public class Assignment1_65050101_65050301 extends JPanel{
     }
     
     void drawCircle(Graphics g, int cenx, int ceny, int rad){
-        if (rad % 2 > 0){
-            System.out.println("Error in this case rad must be even!");
-            return;
-        } 
-        //ceny = ceny-25;
-        bezierCurve(g, cenx - rad, ceny, cenx - rad, ceny - rad / 2, cenx - rad / 2, ceny - rad, cenx, ceny - rad);
-        bezierCurve(g, cenx, ceny - rad, cenx + rad / 2, ceny - rad, cenx + rad, ceny - rad / 2, cenx + rad, ceny);
-        bezierCurve(g, cenx + rad, ceny, cenx + rad, ceny + rad / 2, cenx + rad / 2, ceny + rad, cenx, ceny + rad);
-        bezierCurve(g, cenx, ceny + rad, cenx - rad / 2, ceny + rad, cenx - rad, ceny + rad / 2, cenx - rad, ceny);
-
+        // if (rad % 2 > 0){
+        //     System.out.println("Error in this case rad must be even!");
+        //     return;
+        // } 
+        // //ceny = ceny-25;
         // bezierCurve(g, cenx - rad, ceny, cenx - rad, ceny - rad / 2, cenx - rad / 2, ceny - rad, cenx, ceny - rad);
         // bezierCurve(g, cenx, ceny - rad, cenx + rad / 2, ceny - rad, cenx + rad, ceny - rad / 2, cenx + rad, ceny);
         // bezierCurve(g, cenx + rad, ceny, cenx + rad, ceny + rad / 2, cenx + rad / 2, ceny + rad, cenx, ceny + rad);
         // bezierCurve(g, cenx, ceny + rad, cenx - rad / 2, ceny + rad, cenx - rad, ceny + rad / 2, cenx - rad, ceny);
+        int x = 0;
+        int y = rad;
+        int Dx = 2 * x;
+        int Dy = 2 * y;
+        int D = 1 - rad;
+        while (x <= y) {
+            plot(g, cenx + x, ceny + y);
+            plot(g, cenx - x, ceny - y);
+            plot(g, cenx - x, ceny + y);
+            plot(g, cenx + x, ceny - y);
+            
+            plot(g, cenx + y, ceny + x);
+            plot(g, cenx - y, ceny - x);
+            plot(g, cenx - y, ceny + x);
+            plot(g, cenx + y, ceny - x);
+            x++;
+            Dx += 2;
+            D += Dx + 1;
+            if (D >= 0) {
+                y -= 1;
+                Dy -= 2;
+                D -= Dy;
+            }
+
+        }
         
         
     }
