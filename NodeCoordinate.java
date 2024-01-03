@@ -16,6 +16,7 @@ public class NodeCoordinate {
     }
 
     public boolean equals(NodeCoordinate other) {
+        if (other == null) return false;
         return other.getX() == this.getX() && other.getY() == this.getY();
     }
     public String toString() {
