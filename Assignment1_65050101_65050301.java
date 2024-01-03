@@ -42,6 +42,7 @@ public class Assignment1_65050101_65050301 extends JPanel{
         paintLegs(buffer);
         drawBodyBack(g2);
         drawDragonSpike(g2);
+        //paintBackBody(buffer);
 
         
         g2.setColor(Color.black);
@@ -85,6 +86,7 @@ public class Assignment1_65050101_65050301 extends JPanel{
         floodFill(bf, 52, 445, baseColor, new Color(120, 102, 105));
         floodFill(bf, 50, 440, baseColor, new Color(145, 132, 125));
         
+        
     }
 
     void paintFrontBody(BufferedImage bf){
@@ -122,6 +124,8 @@ public class Assignment1_65050101_65050301 extends JPanel{
         floodFill(bf, 300, 250, baseColor, new Color(177, 149, 136));
 
         floodFill(bf, 260, 130, baseColor, new Color(177, 149, 136));
+
+        //floodFill(bf, 463, 360, baseColor, Color.BLACK);
     }
 
     void drawfrontBody(Graphics g){
@@ -133,6 +137,7 @@ public class Assignment1_65050101_65050301 extends JPanel{
         continuousDraw(g, inner);
         inner.clear();
 
+        //หนามบน
         bresenhamLine(g, 203, 226, 225, 205);
         bresenhamLine(g, 225, 205, 222, 225);
         bresenhamLine(g, 223, 222, 245, 200);
@@ -158,6 +163,8 @@ public class Assignment1_65050101_65050301 extends JPanel{
         inner.add(new NodeCoordinate(278, 311));
         inner.add(new NodeCoordinate(264, 251));
         inner.add(new NodeCoordinate(240, 223));
+        
+        
 
 
         continuousDraw(g, inner);
@@ -285,7 +292,7 @@ public class Assignment1_65050101_65050301 extends JPanel{
         bresenhamLine(g, 42, 444, 55, 438);
         bresenhamLine(g, 78, 450, 100, 434);
         bresenhamLine(g, 144, 414, 126, 397);
-        bresenhamLine(g, 144, 414, 147, 415);
+       bresenhamLine(g, 144, 414, 147, 415);
  
         inner.add(new NodeCoordinate(144, 414));
         inner.add(new NodeCoordinate(156, 419));
@@ -347,6 +354,8 @@ public class Assignment1_65050101_65050301 extends JPanel{
         inner.add(new NodeCoordinate(380, 170));
         inner.add(new NodeCoordinate(360, 180));
         inner.add(new NodeCoordinate(350, 230));
+
+        
 
         continuousDraw(g, inner);
         inner.clear();
@@ -669,22 +678,32 @@ public class Assignment1_65050101_65050301 extends JPanel{
             System.out.println("Error in this case rad must be even!");
             return;
         } 
+        //ceny = ceny-25;
         bezierCurve(g, cenx - rad, ceny, cenx - rad, ceny - rad / 2, cenx - rad / 2, ceny - rad, cenx, ceny - rad);
         bezierCurve(g, cenx, ceny - rad, cenx + rad / 2, ceny - rad, cenx + rad, ceny - rad / 2, cenx + rad, ceny);
         bezierCurve(g, cenx + rad, ceny, cenx + rad, ceny + rad / 2, cenx + rad / 2, ceny + rad, cenx, ceny + rad);
         bezierCurve(g, cenx, ceny + rad, cenx - rad / 2, ceny + rad, cenx - rad, ceny + rad / 2, cenx - rad, ceny);
+
+        // bezierCurve(g, cenx - rad, ceny, cenx - rad, ceny - rad / 2, cenx - rad / 2, ceny - rad, cenx, ceny - rad);
+        // bezierCurve(g, cenx, ceny - rad, cenx + rad / 2, ceny - rad, cenx + rad, ceny - rad / 2, cenx + rad, ceny);
+        // bezierCurve(g, cenx + rad, ceny, cenx + rad, ceny + rad / 2, cenx + rad / 2, ceny + rad, cenx, ceny + rad);
+        // bezierCurve(g, cenx, ceny + rad, cenx - rad / 2, ceny + rad, cenx - rad, ceny + rad / 2, cenx - rad, ceny);
+        
         
     }
     void drawBodyBack(Graphics g){
         //blackTriangle
         bresenhamLine(g,388,240,340,274);
+        bresenhamLine(g,388,240,350,230);
         bresenhamLine(g,340,274,314,326);
-        bresenhamLine(g,314,326,300,387);
-        bresenhamLine(g,300,387,265,268);
-        bresenhamLine(g,265,268, 243,243);
+        //bresenhamLine(g,314,326,300,387);
+        bresenhamLine(g,314,326,317, 396);
+        //bresenhamLine(g,300,387,265,268);
+        //bresenhamLine(g,265,268, 243,243);
         bresenhamLine(g,388,240,396,286);
         bresenhamLine(g,396,286 , 445,266);
         bresenhamLine(g,388,240,445,266);
+        
 
         //grayPolygon
         bresenhamLine(g,340,274,388,333);
@@ -741,46 +760,50 @@ public class Assignment1_65050101_65050301 extends JPanel{
         //MiddleTriangle
         bresenhamLine(g,354,440,396,362);
 
-        //MiddleLittleTriangle
+        //MiddleLittleTriangle.
         bresenhamLine(g,388,333,355,364);
         bresenhamLine(g,355,364,396,362);
 
-        //MiddleSmallpentagon
+        //MiddleSmallpentagon.
         bresenhamLine(g,355,364,345,390);
         bresenhamLine(g,345,390,345,413);
         bresenhamLine(g,345,413,354,440);
 
-        //tinytriTail
+        //tinytriTail.
         bresenhamLine(g,345,413,332,436);
 
-        //GraybesideWhitepentagon
-        bresenhamLine(g,300,387,329,389);
+        //GraybesideWhitepentagon******Dubug
+        //bresenhamLine(g,300,387,329,389);
+        bresenhamLine(g,329,389,317, 396);
         bresenhamLine(g,329,389,345,390);
 
-        //superTinyUndertinyTri
+        //superTinyUndertinyTri.
         bresenhamLine(g,329,389,355,364);
 
-        //tinyPigchin
+        //tinyPigchin.
         bresenhamLine(g,379,324,364,350);
 
-        //tinyMiddleTriangle
+        //tinyMiddleTriangle.
         bresenhamLine(g,372,348,345,354);
         bresenhamLine(g,345,354,346,374);
 
-        //WhitePentagon
+        //WhitePentagon.
         bresenhamLine(g,314,326,345,354);
 
-        //underBlackMiddle
-        bresenhamLine(g,300,387,316,406);
+        //underBlackMiddle ******************
+        //bresenhamLine(g,300,387,316,406);
         bresenhamLine(g,316,406,329,389);
 
-        //catPentagonStomach
-        bresenhamLine(g,316,406,298,423);
-        bresenhamLine(g,298,423,314,436);
-        bresenhamLine(g,314,436,332,436);
+        //catPentagonStomach*********** fit20
+        //bresenhamLine(g,316,406,298,423);
+        bresenhamLine(g,316,406,315, 425);
+        bresenhamLine(g,314,406,317, 396);
+        //bresenhamLine(g,314,436,298,423);
+        bresenhamLine(g,314,436,315, 425);
 
-        //
+        //.
         bresenhamLine(g,314,436,318,452);
+        bresenhamLine(g,314,436,332,436);
 
         //Tail
         bresenhamLine(g, 278,526, 251,539);
@@ -807,6 +830,7 @@ public class Assignment1_65050101_65050301 extends JPanel{
         //1
         bresenhamLine(g, 404, 229, 401, 235);
         bresenhamLine(g, 401, 235, 396, 246);
+        bresenhamLine(g, 404, 229, 350,230);
         
         //2
         bresenhamLine(g, 401, 235, 448, 249);
@@ -893,6 +917,11 @@ public class Assignment1_65050101_65050301 extends JPanel{
         bresenhamLine(g, 256,584, 256,569);
         bresenhamLine(g, 256,569, 262,562);
         
+     }
+     void paintBackBody(BufferedImage bf){
+        Color baseColor = new Color(200,152,87);
+        floodFill(bf, 340,275 , baseColor, Color.gray);
+        floodFill(bf, 385, 241, baseColor, Color.BLACK);
      }
 
 // 
