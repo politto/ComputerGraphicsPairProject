@@ -42,7 +42,9 @@ public class Assignment1_65050101_65050301 extends JPanel{
         paintLegs(buffer);
         drawBodyBack(g2);
         drawDragonSpike(g2);
-        //paintBackBody(buffer);
+        paintBackBody(buffer);
+        paintTail(buffer);
+        paintSpike(buffer);
 
         
         g2.setColor(Color.black);
@@ -705,94 +707,94 @@ public class Assignment1_65050101_65050301 extends JPanel{
         bresenhamLine(g,388,240,445,266);
         
 
-        //grayPolygon
+        //grayPolygon..
         bresenhamLine(g,340,274,388,333);
         bresenhamLine(g,388,333,466,317);
         bresenhamLine(g,466,317,388,333);
 
-        //PurplebeSideTriangle
+        //PurplebeSideTriangle..
         bresenhamLine(g , 445,266,439,296);
         bresenhamLine(g ,439,296, 500,340);
         bresenhamLine(g , 445,266,491,313);
         bresenhamLine(g,491,313 , 500,340);
 
-        //smallTriangle
+        //smallTriangle..
         bresenhamLine(g,466,317,462,359);
         bresenhamLine(g,462,359,500,340);
 
-        //bigTriangle
+        //bigTriangle..
         bresenhamLine(g,462,359,459,391);
         bresenhamLine(g,459,391,419,345);
         bresenhamLine(g,419,345,388,333);
 
-        //pigChin
+        //pigChin..
         bresenhamLine(g,459,391,457,403);
         bresenhamLine(g,457,403,482,425);
         bresenhamLine(g,482,425,500,390);
         bresenhamLine(g,500,390,500,340);
 
-        //triangleBesideChin
+        //triangleBesideChin..
         bresenhamLine(g,457,403,450,462);
         bresenhamLine(g,450,462,482,425);
 
-        //catButt
+        //catButt..
         bresenhamLine(g,450,462,370,490);
         bresenhamLine(g,370,490,373,442);
         bresenhamLine(g,373,442,417,437);
         bresenhamLine(g,417,437,459,391);
 
-        //BeforecatTail
+        //BeforecatTail..
         bresenhamLine(g,370,490,265,507);
         bresenhamLine(g,265,507,298,474);
         bresenhamLine(g,298,474,317,480);
         bresenhamLine(g,317,480,370,490);
         
-        //triangleAboveTail
+        //triangleAboveTail..
         bresenhamLine(g,298,474,332,436);
         bresenhamLine(g,332,436,317,480);
 
-        //squreBesideAboveTail
+        //squreBesideAboveTail..
         bresenhamLine(g,332,436,373,442);
         
-        //MiddlePenta
+        //MiddlePenta..
         bresenhamLine(g,417,437,388,333);
 
-        //MiddleTriangle
+        //MiddleTriangle..
         bresenhamLine(g,354,440,396,362);
 
-        //MiddleLittleTriangle.
+        //MiddleLittleTriangle..
         bresenhamLine(g,388,333,355,364);
         bresenhamLine(g,355,364,396,362);
 
-        //MiddleSmallpentagon.
+        //MiddleSmallpentagon..
         bresenhamLine(g,355,364,345,390);
         bresenhamLine(g,345,390,345,413);
         bresenhamLine(g,345,413,354,440);
 
-        //tinytriTail.
+        //tinytriTail..
         bresenhamLine(g,345,413,332,436);
 
-        //GraybesideWhitepentagon******Dubug
+        //GraybesideWhitepentagon******Dubug..
         //bresenhamLine(g,300,387,329,389);
         bresenhamLine(g,329,389,317, 396);
         bresenhamLine(g,329,389,345,390);
 
-        //superTinyUndertinyTri.
+        //superTinyUndertinyTri..
         bresenhamLine(g,329,389,355,364);
 
-        //tinyPigchin.
+        //tinyPigchin..
         bresenhamLine(g,379,324,364,350);
 
-        //tinyMiddleTriangle.
+        //tinyMiddleTriangle..
         bresenhamLine(g,372,348,345,354);
         bresenhamLine(g,345,354,346,374);
 
-        //WhitePentagon.
+        //WhitePentagon..
         bresenhamLine(g,314,326,345,354);
 
         //underBlackMiddle ******************
         //bresenhamLine(g,300,387,316,406);
-        bresenhamLine(g,316,406,329,389);
+        //bresenhamLine(g,316,406,329,389);
 
         //catPentagonStomach*********** fit20
         //bresenhamLine(g,316,406,298,423);
@@ -827,76 +829,76 @@ public class Assignment1_65050101_65050301 extends JPanel{
      }
 
      void drawDragonSpike(Graphics g){
-        //1
+        //1..
         bresenhamLine(g, 404, 229, 401, 235);
         bresenhamLine(g, 401, 235, 396, 246);
         bresenhamLine(g, 404, 229, 350,230);
         
-        //2
-        bresenhamLine(g, 401, 235, 448, 249);
-        bresenhamLine(g, 448, 249, 433, 262);
+        //2..
+        bresenhamLine(g, 400, 235, 448, 249);
+        bresenhamLine(g, 448, 249, 433, 264);
 
-        //3
-        bresenhamLine(g, 433, 262, 465, 259);
+        //3..
+        bresenhamLine(g, 433, 264, 465, 259);
         bresenhamLine(g, 465, 259, 452, 275);
 
-        //4
+        //4..
         bresenhamLine(g, 452, 275, 484, 280);
-        bresenhamLine(g, 484, 280, 467, 291);
+        bresenhamLine(g, 484, 280, 470, 291);
 
-        //5
-        bresenhamLine(g, 467, 291, 495, 290);
+        //5..
+        bresenhamLine(g, 470, 291, 495, 290);
         bresenhamLine(g, 495, 290, 480, 302);
 
-        //6
+        //6..
         bresenhamLine(g, 480, 302, 500, 308);
         bresenhamLine(g, 500, 308, 491, 313);
 
-        //7
+        //7..
         bresenhamLine(g, 491, 313, 518, 342);
         bresenhamLine(g, 518, 342, 499, 346);
 
-        //8
+        //8..
         bresenhamLine(g, 499, 346, 520, 370);
         bresenhamLine(g, 520, 370, 499, 367);
         
-        //9
+        //9..
         bresenhamLine(g, 499, 372, 521, 391);
         bresenhamLine(g, 521, 391, 499, 390);
 
-        //10
+        //10..
         bresenhamLine(g, 499, 390, 495, 446);
         bresenhamLine(g, 495, 446, 488, 432);
         bresenhamLine(g, 488, 432, 482,425);
 
-        //11
+        //11..
         bresenhamLine(g, 488, 432, 451,490);
         bresenhamLine(g, 451, 490, 452,477);
         bresenhamLine(g, 452, 477, 450,462);
 
-        //12
+        //12..
         bresenhamLine(g, 452, 477, 401,506);
         bresenhamLine(g, 401,506, 411, 475);
 
-        //13
+        //13..
         bresenhamLine(g, 411,475, 377, 506);
         bresenhamLine(g, 377, 506, 386,484);
 
-        //14
+        //14..
         bresenhamLine(g, 386,484, 353,510);
         bresenhamLine(g, 353,510, 363,492);
 
-        //15
+        //15..
         bresenhamLine(g, 363,492, 332,510);
         bresenhamLine(g, 332,510, 332,497);
 
-        //16
+        //16..
         bresenhamLine(g, 332,497, 287,524);
         bresenhamLine(g, 287,524, 293,503);
         bresenhamLine(g, 287,524, 263,528);
         bresenhamLine(g, 263,528, 265,507);
 
-        //17
+        //17..
         bresenhamLine(g, 265,507, 243,519);
         bresenhamLine(g, 243,519, 263,528);
         bresenhamLine(g, 263,528, 265,507);
@@ -908,20 +910,75 @@ public class Assignment1_65050101_65050301 extends JPanel{
         bresenhamLine(g, 224,546, 239,548);
         bresenhamLine(g, 239,548, 250,546);
 
+        //19
         bresenhamLine(g, 239,548, 236,566);
         bresenhamLine(g, 236,566, 243,560);
         bresenhamLine(g, 243,560, 250,546);
 
-        //
+        //20
         bresenhamLine(g, 243,560, 256,584);
         bresenhamLine(g, 256,584, 256,569);
         bresenhamLine(g, 256,569, 262,562);
         
      }
      void paintBackBody(BufferedImage bf){
-        Color baseColor = new Color(200,152,87);
-        floodFill(bf, 340,275 , baseColor, Color.gray);
+        Color baseColor = new Color(200,152,87); 
         floodFill(bf, 385, 241, baseColor, Color.BLACK);
+        floodFill(bf, 388,241 , baseColor, new Color(202,170,151));
+        floodFill(bf, 340,275 , baseColor, new Color(222,189,168));
+        floodFill(bf, 389,245 , baseColor, Color.BLACK);
+        floodFill(bf, 445,267 , baseColor, new Color(163,129,115));
+        floodFill(bf, 465,350 , baseColor, new Color(233,197,167));
+        floodFill(bf, 420,345 , baseColor, new Color(222,189,167));
+        floodFill(bf, 457, 388, baseColor, new Color(208,178,161));
+        floodFill(bf, 482, 420, baseColor, new Color(200,173,158));
+        floodFill(bf, 457, 403, baseColor ,new Color(207,175,156));
+        floodFill(bf, 360, 486, baseColor ,new Color(180,152,139));
+        floodFill(bf, 360, 491, baseColor ,Color.black);
+        floodFill(bf, 314, 458, baseColor ,new Color(149,117,111));
+        floodFill(bf, 331, 436, baseColor ,new Color(149,117,111));
+        floodFill(bf, 347, 422, baseColor ,new Color(149,117,111));
+        floodFill(bf, 394, 403, baseColor ,new Color(190,165,143));
+        floodFill(bf, 384, 341, baseColor ,new Color(201,159,155));
+        floodFill(bf, 371, 394, baseColor ,new Color(218,185,165));
+        floodFill(bf, 344, 386, baseColor ,new Color(133,106,93));
+        floodFill(bf, 330, 409, baseColor ,new Color(140,114,104));
+        floodFill(bf, 378, 325, baseColor ,new Color(135,111,111));
+        floodFill(bf, 346, 355, baseColor ,new Color(175,151,130));
+        floodFill(bf, 313, 406, baseColor ,new Color(119,95,86));
+     }
+     
+     void paintTail(BufferedImage bf){
+        Color baseColor = new Color(200,152,87); 
+        floodFill(bf, 278, 529, baseColor, Color.BLACK);
+        floodFill(bf, 270, 550, baseColor, Color.BLACK);
+        floodFill(bf, 305, 558, baseColor, Color.BLACK);
+     }
+
+     void paintSpike(BufferedImage bf){
+        Color baseColor = new Color(200,152,87);
+        floodFill(bf, 400, 235, baseColor, new Color(220,143,46)); 
+        floodFill(bf, 402, 237, baseColor, new Color(161,100,30)); 
+        floodFill(bf, 451, 270, baseColor, new Color(209,110,42)); 
+        floodFill(bf, 480,282, baseColor, new Color(220,143,46));
+        floodFill(bf, 471,292, baseColor, new Color(161,100,30));
+        floodFill(bf, 496,308, baseColor, new Color(209,110,42));
+        floodFill(bf, 516, 342, baseColor, new Color(220,143,46)); 
+        floodFill(bf, 500, 360, baseColor, new Color(220,143,46)); 
+        floodFill(bf, 517, 389, baseColor, new Color(220,143,46)); 
+        floodFill(bf, 490, 432, baseColor, new Color(161,100,30)); 
+        floodFill(bf, 485, 432, baseColor, new Color(209,110,42)); 
+        floodFill(bf, 450, 477, baseColor, new Color(220,143,46)); 
+        floodFill(bf, 385, 495, baseColor, new Color(161,100,30)); 
+        floodFill(bf, 363,500, baseColor, new Color(209,110,42)); 
+        floodFill(bf, 342,500, baseColor, new Color(220,143,46)); 
+        floodFill(bf, 297,514, baseColor, new Color(209,110,42));
+        floodFill(bf, 277,514, baseColor, new Color(220,143,46)); 
+        floodFill(bf, 248,519, baseColor, new Color(159,112,48)); 
+        floodFill(bf, 243,529, baseColor, new Color(161,100,30)); 
+        floodFill(bf, 244,553, baseColor, new Color(209,110,42)); 
+        floodFill(bf, 256,564, baseColor, new Color(220,143,46));
+        
      }
 
 // 
