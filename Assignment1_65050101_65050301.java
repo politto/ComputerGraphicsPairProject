@@ -107,6 +107,9 @@ public class Assignment1_65050101_65050301 extends JPanel{
         floodFill(bf, 180, 324, baseColor, new Color(165, 158, 162));
         floodFill(bf, 180, 344, baseColor, new Color(155, 140, 143));
         floodFill(bf, 220, 250, baseColor, new Color(165, 158, 162));
+
+        floodFill(bf, 220, 218, baseColor, new Color(200,103,46));
+        floodFill(bf, 230, 218, baseColor, new Color(220,143,46));
     }
 
     void paintWing(BufferedImage bf) {
@@ -924,28 +927,28 @@ public class Assignment1_65050101_65050301 extends JPanel{
      void paintBackBody(BufferedImage bf){
         Color baseColor = new Color(200,152,87); 
         floodFill(bf, 385, 241, baseColor, Color.BLACK);
-        floodFill(bf, 388,241 , baseColor, new Color(202,170,151));
-        floodFill(bf, 340,275 , baseColor, new Color(222,189,168));
+        floodFill(bf, 388,241 , baseColor, new Color(182,180,175));
+        floodFill(bf, 340,275 , baseColor, new Color(220,210,198));
         floodFill(bf, 389,245 , baseColor, Color.BLACK);
-        floodFill(bf, 445,267 , baseColor, new Color(163,129,115));
-        floodFill(bf, 465,350 , baseColor, new Color(233,197,167));
-        floodFill(bf, 420,345 , baseColor, new Color(222,189,167));
-        floodFill(bf, 457, 388, baseColor, new Color(208,178,161));
-        floodFill(bf, 482, 420, baseColor, new Color(200,173,158));
-        floodFill(bf, 457, 403, baseColor ,new Color(207,175,156));
-        floodFill(bf, 360, 486, baseColor ,new Color(180,152,139));
+        floodFill(bf, 445,267 , baseColor, new Color(143,139,135));
+        floodFill(bf, 465,350 , baseColor, new Color(233,227,227));
+        floodFill(bf, 420,345 , baseColor, new Color(202,199,187));
+        floodFill(bf, 457, 388, baseColor, new Color(188,178,161));
+        floodFill(bf, 482, 420, baseColor, new Color(180,173,158));
+        floodFill(bf, 457, 403, baseColor ,new Color(177,175,176));
+        floodFill(bf, 360, 486, baseColor ,new Color(160,152,149));
         floodFill(bf, 360, 491, baseColor ,Color.black);
-        floodFill(bf, 314, 458, baseColor ,new Color(149,117,111));
-        floodFill(bf, 331, 436, baseColor ,new Color(149,117,111));
-        floodFill(bf, 347, 422, baseColor ,new Color(149,117,111));
-        floodFill(bf, 394, 403, baseColor ,new Color(190,165,143));
-        floodFill(bf, 384, 341, baseColor ,new Color(201,159,155));
-        floodFill(bf, 371, 394, baseColor ,new Color(218,185,165));
-        floodFill(bf, 344, 386, baseColor ,new Color(133,106,93));
-        floodFill(bf, 330, 409, baseColor ,new Color(140,114,104));
-        floodFill(bf, 378, 325, baseColor ,new Color(135,111,111));
+        floodFill(bf, 314, 458, baseColor ,new Color(129,127,121));
+        floodFill(bf, 331, 436, baseColor ,new Color(129,117,111));
+        floodFill(bf, 347, 422, baseColor ,new Color(129,117,111));
+        floodFill(bf, 394, 403, baseColor ,new Color(170,165,173));
+        floodFill(bf, 384, 341, baseColor ,new Color(181,169,165));
+        floodFill(bf, 371, 394, baseColor ,new Color(188,185,175));
+        floodFill(bf, 344, 386, baseColor ,new Color(113,106,93));
+        floodFill(bf, 330, 409, baseColor ,new Color(120,114,104));
+        floodFill(bf, 378, 325, baseColor ,new Color(125,111,111));
         floodFill(bf, 346, 355, baseColor ,new Color(175,151,130));
-        floodFill(bf, 313, 406, baseColor ,new Color(119,95,86));
+        floodFill(bf, 313, 406, baseColor ,new Color(119,115,106));
      }
      
      void paintTail(BufferedImage bf){
