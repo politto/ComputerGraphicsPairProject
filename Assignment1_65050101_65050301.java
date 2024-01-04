@@ -679,15 +679,7 @@ public class Assignment1_65050101_65050301 extends JPanel{
     }
     
     void drawCircle(Graphics g, int cenx, int ceny, int rad){
-        // if (rad % 2 > 0){
-        //     System.out.println("Error in this case rad must be even!");
-        //     return;
-        // } 
-        // //ceny = ceny-25;
-        // bezierCurve(g, cenx - rad, ceny, cenx - rad, ceny - rad / 2, cenx - rad / 2, ceny - rad, cenx, ceny - rad);
-        // bezierCurve(g, cenx, ceny - rad, cenx + rad / 2, ceny - rad, cenx + rad, ceny - rad / 2, cenx + rad, ceny);
-        // bezierCurve(g, cenx + rad, ceny, cenx + rad, ceny + rad / 2, cenx + rad / 2, ceny + rad, cenx, ceny + rad);
-        // bezierCurve(g, cenx, ceny + rad, cenx - rad / 2, ceny + rad, cenx - rad, ceny + rad / 2, cenx - rad, ceny);
+        
         int x = 0;
         int y = rad;
         int Dx = 2 * x;
