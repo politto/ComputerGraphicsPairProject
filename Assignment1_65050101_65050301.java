@@ -393,10 +393,10 @@ public class Assignment1_65050101_65050301 extends JPanel{
     }
 
     void drawHead(Graphics g) {
-        drawCircle(g, 115, 187, 14);
-        drawCircle(g, 115, 187, 10);
-        drawCircle(g, 172, 189, 14);
-        drawCircle(g, 172, 189, 10);
+        drawCircle(g, 115, 222, 14);
+        drawCircle(g, 115, 222, 10);
+        drawCircle(g, 172, 224, 14);
+        drawCircle(g, 172, 224, 10);
         ArrayList<NodeCoordinate> outer = new ArrayList<>();
 
         outer.add(new NodeCoordinate(82, 268));
